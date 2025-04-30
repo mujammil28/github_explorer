@@ -1,0 +1,15 @@
+{
+  "name": "github-repo-explorer",
+  "version": "1.0.0",
+  "description": "github explorer app created in node.js, express.js, react.js, database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "node": "^22.15.0"
+  }
+}
