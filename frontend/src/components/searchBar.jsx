@@ -18,6 +18,7 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Enter GitHub username"
         onChange={(e) => setUsername(e.target.value)}
         style={{ padding: '0.5rem', width: '200px' }}
+        required={true}
       />
       <button type="submit" style={{ padding: '0.5rem', marginLeft: '0.5rem' }}>
         Search
