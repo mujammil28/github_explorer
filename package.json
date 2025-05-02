@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "github explorer app created in node.js, express.js, react.js, database",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
