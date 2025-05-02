@@ -1,6 +1,8 @@
 import express from 'express';
 import axios from 'axios';
 import { insertOrUpdateUser, getUserByUsername, getSortedUsers,insertMutualFriend } from '../models/userModel.js';
+import { deleteUserByUsername } from '../models/userModel.js';
+
 
 const router = express.Router();
 
@@ -77,5 +79,15 @@ router.get('/users/sort/by', (req, res) => {
     res.json(users);
   });
 });
+
+
+router.delete('/users/:username', (req, res) => {
+  const { username } = req.params;
+  deleteUserByUsername(username, (err) => {
+    if (err) return res.status(500).json({ error: 'Failed to delete user' });
+    res.json({ message: `User ${username} soft-deleted successfully` });
+  });
+});
+
 
 export default router;

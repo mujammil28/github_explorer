@@ -70,3 +70,6 @@ export const getSortedUsers = (field, callback) => {
 
   db.all(`SELECT * FROM users WHERE deleted = 0 ORDER BY ${field} DESC`, [], callback);
 };
+export const deleteUserByUsername = (username, callback) => {
+  db.run('UPDATE users SET deleted = 1 WHERE username = ?', [username], callback);
+};
