@@ -1,44 +1,18 @@
-import React, { useState } from 'react';
-import { fetchGitHubData } from './configureFile/api';
-import UserCard from './components/userCard';
-import RepoList from './components/repoList';
+import { Route, Routes } from 'react-router-dom';
+import UserProfile from './components/userProfile';
+import FollowersWrapper from '../src/components/followersWrapper'
+import Home from './components/home';
+import RepoDetails from './components/repoDetails';
 
-function App() { 
-  const [username, setUsername] = useState('');
-  const [data, setData] = useState(null);
-  const [error, setError] = useState('');
-
-  const handleSearch = async () => {
-    try {
-      setError('');
-      const result = await fetchGitHubData(username);
-      setData(result);
-    } catch (err) {
-      setError(err.message);
-      setData(null);
-    }
-  };
-
+const App = () => {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>GitHub Explorer</h1>
-      <input
-        type="text"
-        value={username}
-        placeholder="Enter GitHub username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {data && (
-        <>
-          <UserCard user={data.user} />
-          <h3>Repositories:</h3>
-          <RepoList repos={data.repos} />
-        </>
-      )}
-    </div>
+    <Routes>
+     <Route path="/" element={<Home />} />
+  <Route path="/user/:username" element={<UserProfile />} />
+  <Route path="/followers/:username" element={<FollowersWrapper />} />
+  <Route path="/repos/:username" element={<RepoDetails />} /> {/* ✅ Add this */}
+    </Routes>
   );
-}
+};
 
 export default App;
