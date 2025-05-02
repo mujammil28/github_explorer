@@ -55,6 +55,20 @@ router.get('/users/:username/friends', async (req, res) => {
   }
 });
 
+router.get('/users/:username/repos', async (req, res) => {
+  const { username } = req.params;
+
+  try {
+    const response = await axios.get(`https://api.github.com/users/${username}/repos`);
+    const repos = response.data;
+
+    res.json({ repos });
+  } catch (error) {
+    console.error('Failed to fetch repos:', error.message);
+    res.status(500).json({ error: 'Failed to fetch repos from GitHub' });
+  }
+});
+
 router.get('/users/sort/by', (req, res) => {
   const { sortBy } = req.query;
 
