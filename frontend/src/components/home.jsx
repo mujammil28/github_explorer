@@ -3,6 +3,7 @@ import { fetchUser, fetchRepos, sortUsers } from '../api';
 import SearchBar from './searchBar';
 import UserCard from './userCard';
 import RepoList from './repoList';
+import '../App.css'; // Import the CSS file
 
 const Home = () => {
   const [user, setUser] = useState(null);
@@ -37,25 +38,24 @@ const Home = () => {
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div className="container">
       <h1>GitHub User Explorer</h1>
       <SearchBar onSearch={handleSearch} />
-      <button onClick={() => handleSort('followers')} style={{ marginRight: '1rem' }}>
-        Sort by Followers
+      <button onClick={() => handleSort('followers')} style={{ marginTop: '1rem' }}>
+        Show All Users
       </button>
-      <button onClick={() => handleSort('public_repos')}>Sort by Repositories</button>
-
+  
       {user && <UserCard user={user} />}
-
+  
       {users.length > 0 && (
-        <div style={{ marginTop: '2rem' }}>
+        <div>
           <h2>Sorted Users</h2>
           {users.map((u) => (
             <UserCard key={u.id} user={u} />
           ))}
         </div>
       )}
-
+  
       {repos.length > 0 && (
         <div style={{ marginTop: '2rem' }}>
           <h2>Repositories</h2>
