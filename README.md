@@ -31,6 +31,8 @@ STEPS TO RUN PROJECT:
 6. GO TO THE backend/ where server.js/ FILE IS PRESENT AND RUN COMMAND "node ./server.js"
 7. GO TO THE frontend/ where app.js/ FILE IS PRESENT AND RUN COMMAND "npm start"
 8. THAT's IT NOW AUTOMATICALLY PROJECT WILL RUN ON BROWSER.
+
+ 
 NOTE: YOU SHOULD HAVE sqlite3 DOWNLOADED IN YOUR PC.
 
 ###############################################################################
