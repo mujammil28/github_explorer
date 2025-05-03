@@ -21,6 +21,17 @@ Enables navigation between user profiles 🔁
 
 Efficient data caching to reduce API calls ♻️
 
+STEPS TO RUN PROJECT:
+
+1. CLONE PROJECT IN LOCAL DIRECTORY
+2. OPEN VS TERMINAL
+3. RUN COMMAND "npm install"
+4. GO INSIDE FRONTEND DIRECTORY
+5. RUN COMMAND "npm install"
+6. GO TO THE backend/ where server.js/ FILE IS PRESENT AND RUN COMMAND "node ./server.js"
+7. GO TO THE frontend/ where app.js/ FILE IS PRESENT AND RUN COMMAND "npm start"
+8. THAT's IT NOW AUTOMATICALLY PROJECT WILL RUN ON BROWSER.
+   
 ###############################################################################
 
 Projects ScreenShots: 
