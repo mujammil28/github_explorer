@@ -10,7 +10,7 @@ const App = () => {
      <Route path="/" element={<Home />} />
   <Route path="/user/:username" element={<UserProfile />} />
   <Route path="/followers/:username" element={<FollowersWrapper />} />
-  <Route path="/repos/:username" element={<RepoDetails />} /> {/* ✅ Add this */}
+  <Route path="/repos/:username" element={<RepoDetails />} /> 
     </Routes>
   );
 };
