@@ -1,0 +1,101 @@
+.user-profile-container {
+    display: flex;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 40px auto;
+  }
+  
+  .user-profile-left {
+    width: 220px;
+    text-align: center;
+    margin-right: 32px;
+  }
+  
+  .user-profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-bottom: 12px;
+  }
+  
+  .user-profile-verified {
+    color: #28a745;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  .user-tags {
+    margin-top: 12px;
+  }
+  
+  .user-tag {
+    display: inline-block;
+    background-color: #f1f8ff;
+    color: #0366d6;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 4px;
+    border: 1px solid #d1d5da;
+  }
+  
+  .user-profile-right {
+    flex: 1;
+  }
+  
+  .user-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .user-bio {
+    font-size: 14px;
+    color: #586069;
+    margin-bottom: 16px;
+  }
+  
+  .user-actions {
+    margin-top: 16px;
+  }
+  
+  .user-action {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-right: 12px;
+  }
+  
+  .user-action:hover {
+    background-color: #218838;
+  }
+  
+  .user-link {
+    color: #0366d6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .user-link:hover {
+    text-decoration: underline;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    color: #0366d6;
+    font-size: 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    padding: 0;
+  }
+  

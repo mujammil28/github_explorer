@@ -1,0 +1,123 @@
+/* RepoDetails.css */
+
+.repo-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+    color: #1a1a1a;
+  }
+  
+  .back-button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: #1e88e5;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .user-info img {
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .user-info h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .user-info p {
+    margin: 4px 0;
+    font-size: 15px;
+    color: #444;
+  }
+  
+  .user-info a {
+    font-size: 15px;
+    color: #1e88e5;
+    text-decoration: none;
+  }
+  
+  .user-info a:hover {
+    text-decoration: underline;
+  }
+  
+  .repo-section {
+    margin-top: 30px;
+  }
+  
+  .repo-section h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .repo-section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .repo-section li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  
+  .repo-section strong {
+    color: #333;
+  }
+  .repo-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  }
+  
+  .repo-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 16px;
+    flex-shrink: 0;
+  }
+  
+  .repo-content {
+    flex: 1;
+  }
+  
+  .repo-title {
+    font-weight: 600;
+    color: #0366d6;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .repo-title:hover {
+    text-decoration: underline;
+  }
+  
+  .repo-description {
+    color: #586069;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  
