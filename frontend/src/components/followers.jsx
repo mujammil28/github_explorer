@@ -24,10 +24,7 @@ const FollowersPage = ({ username, onUserClick }) => {
       <h2>Followers of {username}</h2>
       <ul>
         {followers.map((follower, index) => (
-          <li key={index} style={{ cursor: 'pointer', margin: '10px 0' }}
-              onClick={() => onUserClick(follower)}>
-            {follower}
-          </li>
+          <li key={index} onClick={() => onUserClick(follower)}>{follower}</li>
         ))}
       </ul>
     </div>
