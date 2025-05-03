@@ -14,11 +14,13 @@ const SearchBar = ({ onSearch }) => {
     <form onSubmit={handleSubmit} style={{ marginBottom: '1rem' }}>
       <input
         type="text"
+        className="search-bar"
         value={username}
         placeholder="Enter GitHub username"
         onChange={(e) => setUsername(e.target.value)}
         style={{ padding: '0.5rem', width: '200px' }}
         required={true}
+      
       />
       <button type="submit" style={{ padding: '0.5rem', marginLeft: '0.5rem' }}>
         Search

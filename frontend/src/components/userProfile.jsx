@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import '../styles/UserProfile.css';
 
 const UserProfile = () => {
   const { username } = useParams();
@@ -9,7 +10,7 @@ const UserProfile = () => {
 
   const goToRepos = () => {
     navigate(`/repos/${username}`);
-  };  
+  };
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -24,25 +25,55 @@ const UserProfile = () => {
     fetchUserData();
   }, [username]);
 
-  if (!userData) return <div>Loading...</div>;
+  if (!userData) return <div className="loading">Loading...</div>;
 
   return (
-    <div>
-      <button onClick={() => window.location.href = '/'}>🔙 Back to Search</button>
-      <h2>{userData.name}</h2>
-      <img src={userData.avatar_url} alt={userData.name} width={100} />
-      <p>{userData.bio}</p>
-      <p>{userData.location}</p>
-      <div style={{ marginTop: '10px' }}>
-        <button onClick={goToRepos}>View Repositories</button>
-        <a 
-          href={userData.html_url} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          style={{ marginLeft: '10px' }}
+    <div className="user-profile-container">
+      <div className="user-profile-left">
+        <img
+          src={userData.avatar_url}
+          alt={userData.name}
+          className="user-profile-avatar"
+        />
+        <div className="user-profile-verified">Verified GitHub User</div>
+        <div className="user-tags">
+          <span className="user-tag">Repos: {userData.public_repos}</span>
+          <span className="user-tag">Followers: {userData.followers}</span>
+          <span className="user-tag">Following: {userData.following}</span>
+        </div>
+      </div>
+
+      <div className="user-profile-right">
+        <button
+          className="back-button"
+          onClick={() => window.location.href = '/'}
         >
-          Visit GitHub Profile
-        </a>
+        Back
+        </button>
+
+        <h2 className="user-name">{userData.name || userData.login}</h2>
+        <p className="user-bio">{userData.bio || 'No bio available.'}</p>
+        <p><strong>Location:</strong> {userData.location || 'Not specified'}</p>
+        <p><strong>Company:</strong> {userData.company || 'N/A'}</p>
+        <p><strong>Blog:</strong> {
+          userData.blog ? (
+            <a href={userData.blog} target="_blank" rel="noopener noreferrer">
+              {userData.blog}
+            </a>
+          ) : 'N/A'
+        }</p>
+
+        <div className="user-actions">
+          <button onClick={goToRepos} className="user-action">View Repositories</button>
+          <a
+            href={userData.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="user-link"
+          >
+            Visit GitHub Profile
+          </a>
+        </div>
       </div>
     </div>
   );

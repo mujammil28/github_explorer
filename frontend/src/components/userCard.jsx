@@ -7,13 +7,15 @@ const UserCard = ({ user }) => {
   const username = user.username || user.login; // handle GitHub API field
 
   return (
-    <div>
-      <img src={user.avatar_url} alt="avatar" width={100} />
-      <h2>{user.name || username}</h2>
-      <p>{user.bio}</p>
-      <p>Location: {user.location}</p>
-      <Link to={`/repos/${username}`}>View Profile</Link><br />
-      <Link to={`/followers/${username}`}>View Mutual Friends</Link>
+    <div className="user-card">
+      <img src={user.avatar_url} alt="avatar" />
+      <div>
+        <h2>{user.name || username}</h2>
+        <p>{user.bio}</p>
+        <p>Location: {user.location}</p>
+        <Link to={`/repos/${username}`}>View Profile</Link><br />
+        <Link to={`/followers/${username}`}>View Mutual Friends</Link>
+      </div>
     </div>
   );
 };

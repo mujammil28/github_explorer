@@ -4,7 +4,7 @@ import SearchBar from './searchBar';
 import UserCard from './userCard';
 import RepoList from './repoList';
 import '../App.css'; // Import the CSS file
-
+import githubLogo from '../GitHub-Mark.png'
 const Home = () => {
   const [user, setUser] = useState(null);
   const [users, setUsers] = useState([]);
@@ -21,7 +21,7 @@ const Home = () => {
       setRepos(userRepos);
     } catch (err) {
       setUser(null);
-      setRepos([]); // Clear repos if user is not found
+      setRepos([]); 
       alert('User not found');
     }
   };
@@ -31,7 +31,7 @@ const Home = () => {
       const sortedData = await sortUsers(field);
       setUsers(sortedData);
       setUser(null);
-      setRepos([]); // Clear repos when sorting users
+      setRepos([]); 
     } catch (err) {
       console.error('Error sorting users:', err);
     }
@@ -39,7 +39,10 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h1>GitHub User Explorer</h1>
+      <div className="logo-container">
+        <img src={githubLogo} alt="GitHub Logo" className="github-logo" />
+      </div>
+      <h1 className="github-name">GitHub User Explorer</h1>
       <SearchBar onSearch={handleSearch} />
       <button onClick={() => handleSort('followers')} style={{ marginTop: '1rem' }}>
         Show All Users

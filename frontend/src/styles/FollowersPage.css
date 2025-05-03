@@ -1,17 +1,16 @@
 .followers-container {
   padding: 1rem;
-  font-family: Arial, sans-serif;
   max-width: 400px;
   margin: 0 auto;
-  background-color: #fefefe;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .followers-header {
   text-align: center;
-  margin-bottom: 1rem;
-  color: #222;
+  color: #333;
 }
 
 .followers-list {
@@ -21,29 +20,21 @@
 }
 
 .followers-list-item {
-  display: flex;
-  align-items: center;
   padding: 10px;
   margin-bottom: 8px;
   background-color: #f4f4f4;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-weight: 500;
 }
 
 .followers-list-item:hover {
   background-color: #e6e6e6;
 }
 
-.follower-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 12px;
-  border: 2px solid #ccc;
-}
-
-.follower-username {
-  font-size: 16px;
-  font-weight: 500;
+.no-followers {
+  text-align: center;
+  margin-top: 2rem;
+  color: #888;
 }

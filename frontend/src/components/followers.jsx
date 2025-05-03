@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchFollowers } from '../api';
+import '../styles/FollowersPage.css'; // ✅ Import the CSS
 
 const FollowersPage = ({ username, onUserClick }) => {
   const [followers, setFollowers] = useState([]);
@@ -17,14 +18,21 @@ const FollowersPage = ({ username, onUserClick }) => {
     getFollowers();
   }, [username]);
 
-  if (followers.length === 0) return <div>No followers found.</div>;
+  if (followers.length === 0)
+    return <div className="no-followers">No followers found.</div>;
 
   return (
-    <div style={{ padding: '1rem' }}>
-      <h2>Followers of {username}</h2>
-      <ul>
+    <div className="followers-container">
+      <h2 className="followers-header">Followers of {username}</h2>
+      <ul className="followers-list">
         {followers.map((follower, index) => (
-          <li key={index} onClick={() => onUserClick(follower)}>{follower}</li>
+          <li
+            key={index}
+            className="followers-list-item"
+            onClick={() => onUserClick(follower)}
+          >
+            {follower}
+          </li>
         ))}
       </ul>
     </div>

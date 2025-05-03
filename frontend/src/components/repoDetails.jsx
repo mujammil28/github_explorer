@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/RepoDetails.css';
 
 const RepoDetails = () => {
   const { username } = useParams();
@@ -28,10 +29,10 @@ const RepoDetails = () => {
   if (!user) return <p>Loading user data...</p>;
 
   return (
-    <div>
-      <button onClick={() => window.history.back()}>🔙 Back</button>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-        <img src={user.avatar_url} alt="avatar" width={100} style={{ borderRadius: '50%', marginRight: '1rem' }} />
+    <div className="repo-container">
+      <button className="back-button" onClick={() => window.history.back()}>Back</button>
+      <div className="user-info">
+        <img src={user.avatar_url} alt="avatar" width={100} />
         <div>
           <h2>{user.name || user.username}</h2>
           <p>{user.bio}</p>
@@ -40,21 +41,33 @@ const RepoDetails = () => {
           <a href={user.html_url} target="_blank" rel="noopener noreferrer">View GitHub Profile</a>
         </div>
       </div>
-
-      <h3>Repositories</h3>
-      {repos.length === 0 ? (
-        <p>No repositories found.</p>
-      ) : (
-        <ul>
-          {repos.map((repo) => (
-            <li key={repo.id}>
-              <strong>{repo.name}</strong>: {repo.description || 'No description'}
-            </li>
-          ))}
-        </ul>
-      )}
+  
+      <div className="repo-section">
+        <h3>Repositories</h3>
+        {repos.length === 0 ? (
+          <p>No repositories found.</p>
+        ) : (
+          <ul>
+             {repos.map((repo) => (
+    <li key={repo.id} className="repo-card">
+      <div className="repo-avatar">
+        {/* Placeholder or logic for language logo if available */}
+        <img src="https://avatars.githubusercontent.com/u/9919?s=40" alt="repo icon" style={{ borderRadius: '50%' }} />
+      </div>
+      <div className="repo-content">
+        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="repo-title">
+          {repo.name} <img src="https://img.icons8.com/color/16/000000/verified-account.png" alt="verified" style={{ marginLeft: 6 }} />
+        </a>
+        <p className="repo-description">{repo.description || 'No description'}</p>
+      </div>
+    </li>
+  ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
+  
 };
 
 export default RepoDetails;

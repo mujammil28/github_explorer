@@ -3,7 +3,7 @@ import UserProfile from './components/userProfile';
 import FollowersWrapper from '../src/components/followersWrapper'
 import Home from './components/home';
 import RepoDetails from './components/repoDetails';
-
+import './App.css';
 const App = () => {
   return (
     <Routes>
